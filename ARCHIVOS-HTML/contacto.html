@@ -6,25 +6,26 @@
     <title>Contacto</title>
 <link rel="stylesheet" href="../CSS/style.css">
 </head>
-<body>
-    <h1>Nuestros contactos</h1>
-    <p>Nos encontramos en el parque técnologíco de Málaga, Avda. Juan López Peñalver, 21</p>
-    Nuestro número de teléfono de contacto: 678 123 456 <br>
-    Nuestro correo corporativo es: RedOpsTech@redops.com</p>
 
-    
-    <div class="carrusel">
-    <div class="imagenes" id="imagenes">
+<body>
+  <h1>Nuestros contactos</h1>
+  <ul>
+    <li>Nos encontramos en el parque técnologíco de Málaga, Avda. Juan López Peñalver, 21</li>
+    <li>Nuestro número de teléfono de contacto: 678 123 456</li>
+    <li>Nuestro correo corporativo es: RedOpsTech@redops.com</li>
+  </ul>
+  <article>
+    <h2>Nuestras instalaciones:</h2>
+    <div class="carrusel"></div>
+    <div class="imagenes" id="imagenes"></div>
     <img src="../Images/Gemini_Generated_Image_gkqs73gkqs73gkqs.png" alt="Imagen 1">
     <img src="../Images/Gemini_Generated_Image_hoops8hoops8hoop.png" alt="Imagen 2">
     <img src="../Images/Gemini_Generated_Image_kc90w8kc90w8kc90.png" alt="Imagen 3">
-   
-</div>
     <button class="anterior" onclick="mover(-1)">❮</button>
     <button class="siguiente" onclick="mover(1)">❯</button>
-    </div>
+  </article>
 
-    <script>
+<script>
     let index = 0;
     const imagenes = document.getElementById('imagenes');
     const total = imagenes.children.length;
@@ -34,7 +35,5 @@
     imagenes.style.transform = `translateX(${-index * 100}%)`;
   }
 </script>
-
-    
 </body>
 </html>
