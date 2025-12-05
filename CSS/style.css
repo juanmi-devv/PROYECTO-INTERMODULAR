@@ -1,18 +1,32 @@
-a {
-    text-align: justify;
-
+* {
+  margin: 0;
+  box-sizing: border-box;
 }
 
-h1 {
-  text-align: center;
+header {
+  background-color: royalblue;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-size: 30px;
 }
 
-body {
-  background-color: #009944
-  background-image; 
+.logo {
+  margin: 10px;
+  border-radius: 10px;
 }
+
+header nav a {
+  color: white;
+}
+
 body {
   background-image: url(../); background-repeat: no-repeat; background-size: cover;
+  background-color: #009944
+  margin: 0px;
+
 }
 
 .carrusel {
@@ -44,5 +58,4 @@ body {
     cursor: pointer;
   }
 
-  .anterior { left: 10px; }
-  .siguiente { right: 10px; }
+
