@@ -3,21 +3,65 @@
   box-sizing: border-box;
 }
 
+/* --- 1. Estilos del Contenedor Principal (HEADER) --- */
 header {
-  background-color: royalblue;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  font-size: 30px;
+    /* Usamos Flexbox para alinear el logo, nav y h1 en una fila */
+    display: flex;
+    /* Los alinea en el eje principal (horizontalmente) */
+    justify-content: space-between; 
+    /* Los centra en el eje secundario (verticalmente) */
+    align-items: center; 
+    
+    background-color: #f0a800; /* Color de fondo claro para el encabezado */
+    padding: 10px 40px; /* Relleno superior/inferior y a los lados */
+    border-bottom: 2px solid #ddd; /* Línea de separación sutil */
+    
+    /* Fuente por defecto (opcional) */
+    font-family: Arial, sans-serif;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.logo {
-  margin: 10px;
-  border-radius: 10px;
+/* --- 2. Estilos del Logo --- */
+header .logo {
+    /* El tamaño ya está definido en el HTML (180x200), pero podemos añadir margen */
+    margin-left: 10px;
+    /* Asegura que el logo no se comprima */
+    flex-shrink: 0; 
+}
+
+/* --- 3. Estilos del Título Principal (h1) --- */
+header h1 {
+    /* El h1 lo colocamos a la derecha */
+    color: #cc0000; /* Un color distintivo, como un rojo fuerte para "Tech" */
+    font-size: 2.5em; /* Tamaño grande */
+    font-weight: bold;
+    margin: 0;
+    /* Este margen empuja al h1 a la derecha, si el nav está en el centro */
+    margin-left: auto; 
+}
+
+/* --- 4. Estilos de la Navegación (NAV) --- */
+header nav {
+    /* Ocupa el espacio central */
+    flex-grow: 1; 
+    text-align: center;
 }
 
 header nav a {
-  color: white;
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: #333; /* Color de texto oscuro */
+    font-size: 1.1em;
+    font-weight: 500;
+    margin: 0 15px; /* Espaciado entre los enlaces */
+    padding: 5px 10px; /* Relleno alrededor del texto para mejor área de clic */
+    transition: color 0.3s, border-bottom 0.3s; /* Transición suave para el hover */
+}
+
+/* Efecto al pasar el ratón (Hover) */
+header nav a:hover {
+    color: #ff6600; /* Color naranja o de acento al pasar el ratón */
+    border-bottom: 2px solid #ff6600;
 }
