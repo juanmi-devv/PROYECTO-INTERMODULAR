@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"name": "SCOOTCOIIN",
+			"path": "../../../SCOOTCOIIN"
+		},
+		{
+			"name": "PROYECTO-INT",
+			"path": "../.."
+		},
+		{
+			"name": "Programacion",
+			"path": "../../../Programacion"
+		},
+		{
+			"path": "../../../HLC"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "PROYECTO-INT"
+	}
+}
