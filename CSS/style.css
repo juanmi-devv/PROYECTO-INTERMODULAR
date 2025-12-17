@@ -28,8 +28,9 @@ header {
 header .logo {
     /* El tamaño ya está definido en el HTML (180x200), pero podemos añadir margen */
     margin-left: 10px;
-    /* Asegura que el logo no se comprima */
-    flex-shrink: 0; 
+    height: 180px; 
+    width: 200px;
+    object-fit: contain;
 }
 
 /* --- 3. Estilos del Título Principal (h1) --- */
