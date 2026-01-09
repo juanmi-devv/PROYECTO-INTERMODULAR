@@ -9,7 +9,7 @@ header {
     display: flex;
     /* Los alinea en el eje principal (horizontalmente) */
     justify-content: space-between; 
-    /* Los centra en el eje secundario (verticalmente) */
+    /* Los centra (verticalmente) */
     align-items: center; 
     
     background-color: #f0a800; /* Color de fondo claro para el encabezado */
@@ -28,14 +28,15 @@ header {
 header .logo {
     /* El tamaño ya está definido en el HTML (180x200), pero podemos añadir margen */
     margin-left: 10px;
-    /* Asegura que el logo no se comprima */
-    flex-shrink: 0; 
+    height: 180px; 
+    width: 200px;
+    object-fit: contain;
 }
 
 /* --- 3. Estilos del Título Principal (h1) --- */
 header h1 {
     /* El h1 lo colocamos a la derecha */
-    color: #cc0000; /* Un color distintivo, como un rojo fuerte para "Tech" */
+    color: #749bf6; /* Un color distintivo, como un rojo fuerte para "Tech" */
     font-size: 2.5em; /* Tamaño grande */
     font-weight: bold;
     margin: 0;
@@ -62,6 +63,6 @@ header nav a {
 
 /* Efecto al pasar el ratón (Hover) */
 header nav a:hover {
-    color: #ff6600; /* Color naranja o de acento al pasar el ratón */
+    color: #ff6600; /* Color naranja al pasar el puntero sobre los enlaces */
     border-bottom: 2px solid #ff6600;
 }
