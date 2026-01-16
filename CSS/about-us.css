@@ -66,3 +66,18 @@ header nav a:hover {
     color: #ff6600; /* Color naranja al pasar el puntero sobre los enlaces */
     border-bottom: 2px solid #ff6600;
 }
+.about-intro {
+    justify-content: center;
+}
+
+main article {
+
+    max-width: 1000px;
+    /* centra el bloque en la pantalla automáticamente */
+    margin: 0 auto;
+    padding: 0 20px;
+    
+    text-align: justify;
+    line-height: 1.8;
+    color: #444;
+}
