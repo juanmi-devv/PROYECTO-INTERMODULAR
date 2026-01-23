@@ -1,37 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RedOps Tech - Inicio</title>
+    <title>RedOps Tech - Infraestructura y Desarrollo</title>
     <link rel="stylesheet" href="CSS/style.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <a href="index.html">
-            <img class="logo" src="Images/nano-banana-2025-10-17T08-29-02-removebg-preview.png" alt="logo">    
+            <img class="logo" src="Images/nano-banana-2025-10-17T08-29-02-removebg-preview.png" alt="Logo RedOps Tech">    
         </a>
         <nav>
             <a href="ARCHIVOS-HTML/about-us.html">Acerca de RedOps</a>
             <a href="ARCHIVOS-HTML/servicios.html">Nuestros servicios</a>
             <a href="ARCHIVOS-HTML/contacto.html">Contáctanos</a>
-            <a href="index.html">Inicio</a>
+            <a href="index.html" class="active">Inicio</a>
         </nav>
-        <h1>RedOps Tech</h1>  
+        <h1 style="display:none;">RedOps Tech</h1>  
     </header>
     
     <main>
         <section id="hero" class="hero-section">
             <div class="hero-content">
                 <h1>RedOps Tech</h1>
-                <p class="slogan">Desarrollo a medida. Redes sin límites.</p>
+                <p class="slogan">Donde la infraestructura física potencia el código inteligente.</p>
+                
                 <p class="hero-description">
-                    Unimos la infraestructura física con el código inteligente. 
-                    Soluciones integrales para empresas que buscan escalabilidad.
+                    En un mundo fragmentado, nosotros unimos los puntos. No solo desarrollamos software a medida; 
+                    construimos la autopista digital por la que viaja. Desde la instalación de redes certificadas 
+                    hasta el despliegue de aplicaciones web de alto rendimiento. 
+                    <strong>Centraliza tu tecnología, maximiza tu escalabilidad.</strong>
                 </p>
+                
                 <div class="cta-buttons">
-                    <a href="ARCHIVOS-HTML/servicios.html" class="btn-secondary">Ver Servicios</a>
+                    <a href="ARCHIVOS-HTML/servicios.html" class="btn-secondary">Descubre nuestra Ingeniería</a>
                 </div>
             </div>
         </section>
@@ -42,11 +46,11 @@
             <div class="services-grid">
                 <article class="service-card">
                     <h3>Departamento de Redes</h3>
-                    <p>Instalación, certificación y mantenimiento de redes locales.</p>
+                    <p>Instalación, certificación y mantenimiento de infraestructuras críticas.</p>
                     <ul>
                         <li>Cableado estructurado y Racks</li>
                         <li>Configuración de Switches y Routers</li>
-                        <li>Seguridad perimetral</li>
+                        <li>Seguridad perimetral y VPNs</li>
                     </ul>
                 </article>
 
@@ -54,24 +58,43 @@
                     <h3>Desarrollo Web</h3>
                     <p>Creación de software a medida, Front-end y Back-end.</p>
                     <ul>
-                        <li>Webs corporativas y Apps</li>
-                        <li>Integración de APIs</li>
-                        <li>Bases de datos SQL</li>
+                        <li>Webs corporativas y Apps (React/Node)</li>
+                        <li>Integración de APIs REST</li>
+                        <li>Bases de datos SQL y NoSQL</li>
                     </ul>
                 </article>
             </div>
         </section>
-
-        <section id="innovacion" class="tech-stack">
-            <h2>Innovación al servicio del cliente</h2>
-            <p>Usamos tecnologías punteras (AWS, Proxmox, React) y ofrecemos transparencia total.</p>
-        </section>
     </main> 
 
+    <article id="contacto-home">
+        <h1 style="text-align: center;">Hablemos de tu proyecto</h1>
+        
+        <form action="#" method="POST">    
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="tunombre@ejemplo.com" required>
+
+            <label for="asunto">Asunto</label>
+            <input type="text" id="asunto" name="asunto" placeholder="Motivo del mensaje">
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos sobre tu infraestructura o idea de software..." required></textarea>
+
+            <input type="submit" value="Enviar mensaje">
+        </form>
+    </article>
+    
     <footer>
-        <a href="ARCHIVOS-HTML/formulario.html">Consulte sus dudas</a>
-        <p>© 2025 RedOps Tech. Todos los derechos reservados.</p>
-        <p>Nuestras redes sociales</p>
+        <nav class="footer-nav">
+            <a href="ARCHIVOS-HTML/formulario.html">Consulte sus dudas</a>
+        </nav>
+        <div class="footer-info">
+            <p>© 2025 RedOps Tech. Todos los derechos reservados.</p>
+            <p>Síguenos en nuestras redes</p>
+        </div>
     </footer>
 
     <script src="JS/app.js"></script>

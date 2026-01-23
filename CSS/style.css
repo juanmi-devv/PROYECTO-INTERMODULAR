@@ -1,92 +1,22 @@
-* {
-  margin: 0;
-  box-sizing: border-box;
-}
-
-/* --- 1. Estilos del Contenedor Principal (HEADER) --- */
-header {
-    /* Usamos Flexbox para alinear el logo, nav y h1 en una fila */
-    display: flex;
-    /* Los alinea en el eje principal (horizontalmente) */
-    justify-content: space-between; 
-    /* Los centra (verticalmente) */
-    align-items: center; 
-    
-    background-color: #f0a800; /* Color de fondo claro para el encabezado */
-    padding: 10px 40px; /* Relleno superior/inferior y a los lados */
-    border-bottom: 2px solid #ddd; /* Línea de separación sutil */
-    
-    /* Fuente por defecto (opcional) */
-    font-family: Arial, sans-serif;
-
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-/* --- 2. Estilos del Logo --- */
-header .logo {
-    /* El tamaño ya está definido en el HTML (180x200), pero podemos añadir margen */
-    margin-left: 10px;
-    height: 180px; 
-    width: 200px;
-    object-fit: contain;
-}
-
-/* --- 3. Estilos del Título Principal (h1) --- */
-header h1 {
-    /* El h1 lo colocamos a la derecha */
-    color: #749bf6; /* Un color distintivo, como un rojo fuerte para "Tech" */
-    font-size: 2.5em; /* Tamaño grande */
-    font-weight: bold;
-    margin: 0;
-    /* Este margen empuja al h1 a la derecha, si el nav está en el centro */
-    margin-left: auto; 
-}
-
-/* --- 4. Estilos de la Navegación (NAV) --- */
-header nav {
-    /* Ocupa el espacio central */
-    flex-grow: 1; 
-    text-align: center;
-}
-
-header nav a {
-    text-decoration: none; /* Elimina el subrayado de los enlaces */
-    color: #333; /* Color de texto oscuro */
-    font-size: 1.1em;
-    font-weight: 500;
-    margin: 0 15px; /* Espaciado entre los enlaces */
-    padding: 5px 10px; /* Relleno alrededor del texto para mejor área de clic */
-    transition: color 0.3s, border-bottom 0.3s; /* Transición suave para el hover */
-}
-
-/* Efecto al pasar el ratón (Hover) */
-header nav a:hover {
-    color: #ff6600; /* Color naranja al pasar el puntero sobre los enlaces */
-    border-bottom: 2px solid #ff6600;
-}
-
 /* =========================================
    1. VARIABLES Y CONFIGURACIÓN BASE
    ========================================= */
 :root {
-    /* Paleta Corporativa RedOps Tech */
-    --color-primary: #5409DA;    /* Púrpura principal */
-    --color-secondary: #4E71FF;  /* Azul Neón */
-    --color-accent: #FFD700;     /* Dorado (para llamadas a la acción) */
-    --color-light-blue: #BBFBFF; /* Azul muy claro para fondos */
-    --color-dark: #1a1a2e;       /* Fondo oscuro para secciones tech */
+    /* Paleta Corporativa RedOps Tech (Unificada) */
+    --color-primary: #e63946;    /* Rojo RedOps (Marca principal) */
+    --color-primary-dark: #d62828; /* Rojo más oscuro para hover */
+    --color-dark: #1d3557;       /* Azul oscuro profundo (para textos y fondos) */
+    --color-light: #f1faee;      /* Blanco roto suave para fondos */
+    --color-accent: #457b9d;     /* Azul medio para detalles secundarios */
     --color-white: #ffffff;
-    --color-text: #333333;       /* Gris oscuro para lectura */
+    --text-color: #333333;
     
     /* Espaciado y Bordes */
     --border-radius: 8px;
-    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
 }
 
-/* Reset básico para asegurar consistencia */
 * {
     margin: 0;
     padding: 0;
@@ -96,211 +26,372 @@ header nav a:hover {
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    color: var(--color-text);
-    background-color: #f9f9f9;
+    color: var(--text-color);
+    background-color: var(--color-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* =========================================
-   2. MAIN - SECCIÓN HERO (Impacto Visual)
+   2. HEADER Y NAVEGACIÓN
+   ========================================= */
+header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: var(--color-white);
+    padding: 15px 5%; /* Padding responsivo */
+    border-bottom: 3px solid var(--color-primary); /* Línea roja de marca */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+header .logo {
+    height: 60px; /* Tamaño controlado del logo */
+    width: auto;
+    object-fit: contain;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--color-dark);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+header nav a:hover,
+header nav a.active {
+    color: var(--color-primary);
+    background-color: rgba(230, 57, 70, 0.05);
+}
+
+/* =========================================
+   3. SECCIÓN HERO (Portada)
    ========================================= */
 .hero-section {
-    /* Degradado diagonal que mezcla el púrpura y el azul neón */
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    /* Degradado profesional Oscuro -> Rojo */
+    background: linear-gradient(135deg, var(--color-dark) 0%, #2a4d7a 100%);
     color: var(--color-white);
-    padding: 5rem 2rem;
+    padding: 6rem 2rem;
     text-align: center;
-    /* Efecto sutil de patrón tecnológico (opcional) */
     position: relative;
-    overflow: hidden;
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    position: relative;
-    z-index: 2;
 }
 
 .hero-section h1 {
     font-size: 3.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     font-weight: 800;
-    letter-spacing: -1px;
 }
 
 .slogan {
     font-size: 1.5rem;
-    color: var(--color-accent); /* El eslogan en dorado destaca sobre el púrpura */
+    color: #a8dadc; /* Azul muy claro para destacar */
     font-style: italic;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .hero-description {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-bottom: 2.5rem;
-    opacity: 0.9;
+    line-height: 1.8;
+    opacity: 0.95;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Botones del Hero */
+/* Botones */
 .cta-buttons {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.btn-primary {
-    background-color: var(--color-accent);
-    color: var(--color-primary);
-    padding: 0.8rem 2rem;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: var(--border-radius);
-    transition: var(--transition);
-    border: 2px solid var(--color-accent);
-}
-
-.btn-primary:hover {
-    background-color: transparent;
-    color: var(--color-accent);
 }
 
 .btn-secondary {
-    background-color: transparent;
+    background-color: var(--color-primary);
     color: var(--color-white);
-    padding: 0.8rem 2rem;
+    padding: 12px 30px;
     text-decoration: none;
     font-weight: bold;
-    border-radius: var(--border-radius);
-    border: 2px solid var(--color-white);
+    border-radius: 50px; /* Botón redondeado moderno */
     transition: var(--transition);
+    border: 2px solid var(--color-primary);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
 }
 
 .btn-secondary:hover {
-    background-color: var(--color-white);
+    background-color: transparent;
     color: var(--color-primary);
+    background-color: white;
 }
 
 /* =========================================
-   3. SECCIÓN SERVICIOS (Grid de Tarjetas)
+   4. SECCIONES GENERALES Y GRID
    ========================================= */
-#servicios-destacados {
+section {
     padding: 4rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-#servicios-destacados h2, 
-#innovacion h2 {
+h2 {
     text-align: center;
-    color: var(--color-primary);
-    font-size: 2.5rem;
+    color: var(--color-dark);
+    font-size: 2.2rem;
     margin-bottom: 3rem;
+    position: relative;
 }
 
+/* Pequeña línea debajo de los títulos H2 */
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-primary);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Grid de Servicios */
 .services-grid {
     display: grid;
-    /* Crea columnas automáticas responsive: mínimo 300px ancho */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
 .service-card {
     background: var(--color-white);
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     transition: var(--transition);
-    border-top: 5px solid var(--color-secondary); /* Detalle de color superior */
+    border-top: 4px solid var(--color-dark); 
 }
 
 .service-card:hover {
-    transform: translateY(-10px); /* Efecto de elevación al pasar el ratón */
-    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    border-top-color: var(--color-primary); /* Cambia a rojo al pasar el ratón */
 }
 
 .service-card h3 {
-    color: var(--color-primary);
+    color: var(--color-dark);
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
 .service-card ul {
     list-style: none;
     margin-top: 1rem;
+    padding: 0;
 }
 
 .service-card ul li {
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    padding-left: 20px;
     position: relative;
+    color: #555;
 }
 
-/* Bullet point personalizado */
 .service-card ul li::before {
-    content: "➤";
-    color: var(--color-accent);
+    content: "✓";
+    color: var(--color-primary);
     position: absolute;
     left: 0;
-    font-size: 0.8rem;
+    font-weight: bold;
 }
 
 /* =========================================
-   4. SECCIÓN INNOVACIÓN (Presupuesto)
+   5. NUEVA SECCIÓN INNOVACIÓN (3 COLUMNAS)
    ========================================= */
 .tech-stack {
-    background-color: var(--color-light-blue); /* Fondo suave */
-    padding: 4rem 2rem;
+    background-color: #eef4f8; /* Fondo gris/azulado suave para diferenciar */
+    width: 100%; /* Ocupar todo el ancho */
+    max-width: 100%;
+}
+
+.tech-stack > div { /* Contenedor interno limitado */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-subtitle {
     text-align: center;
-}
-
-.presupuesto-preview {
-    background: var(--color-white);
     max-width: 600px;
-    margin: 2rem auto 0;
+    margin: -2rem auto 3rem auto;
+    color: #666;
+}
+
+.innovacion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.tech-item {
+    background: white;
     padding: 2rem;
-    border-radius: var(--border-radius);
-    border: 1px solid #ddd;
-    box-shadow: 0 8px 16px rgba(84, 9, 218, 0.1); /* Sombra con tinte púrpura */
-}
-
-.presupuesto-preview h3 {
-    color: var(--color-secondary);
-    margin-bottom: 0.5rem;
-}
-
-.btn-tertiary {
-    display: inline-block;
-    margin-top: 1.5rem;
-    color: var(--color-primary);
-    font-weight: bold;
-    text-decoration: none;
-    border-bottom: 2px solid var(--color-accent);
-    padding-bottom: 2px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
     transition: var(--transition);
 }
 
-.btn-tertiary:hover {
-    color: var(--color-secondary);
-    border-bottom-color: var(--color-secondary);
+.tech-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
 }
 
+.tech-item h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #255b87;
-    border-top: 2px solid #ddd;
+/* =========================================
+   6. FORMULARIO DE CONTACTO
+   ========================================= */
+article#contacto-home {
+    max-width: 600px;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    background-color: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-top: 6px solid var(--color-primary);
+}
+
+#contacto-home h1 {
+    font-size: 2rem;
+    color: var(--color-dark);
+    margin-bottom: 2rem;
+}
+
+form label {
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 0.5rem;
+    margin-top: 1.2rem;
+    display: block;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #eee;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: var(--transition);
+    font-family: inherit;
+    background: #fdfdfd;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background-color: #fff;
+}
+
+form input[type="submit"] {
+    margin-top: 2rem;
+    padding: 15px;
+    background-color: var(--color-primary);
     color: white;
-    display: flex;
-    justify-content: space-between;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    transition: var(--transition);
+}
+
+form input[type="submit"]:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   7. FOOTER
+   ========================================= */
+footer {
+    background-color: var(--color-dark);
+    color: white;
+    padding: 3rem 2rem;
+    margin-top: auto; /* Empuja el footer al fondo si hay poco contenido */
+}
+
+footer .footer-nav {
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 footer a {
-    color: white;
+    color: #a8dadc;
     text-decoration: none;
     font-weight: bold;
-    justify-content: space-between;
+    font-size: 1.1rem;
+}
 
+footer a:hover {
+    color: var(--color-white);
+    text-decoration: underline;
+}
+
+.footer-info {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* =========================================
+   8. MEDIA QUERIES (Móvil)
+   ========================================= */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    header nav {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    article#contacto-home {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+    }
 }
