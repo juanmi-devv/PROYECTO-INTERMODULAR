@@ -1,0 +1,20 @@
+{
+    "header": {
+        "about-us": "Acerca de RedOps",
+        "service": "Nuestros servicios",
+        "contact": "Contáctanos",
+        "home": "Inicio"
+    },
+    "Acerca de RedOps": {
+        "title": "Acerca de RedOps",
+        "text": 
+    },
+    "Nuestro objetivo": {
+        "text": "En RedOps Tech, no nos conformamos con ser una consultora más. Nacimos de una necesidad real detectada en el Parque Tecnológico: la desconexión existente entre la infraestructura física (Redes) y el mundo digital (Desarrollo Web). Mientras otros se especializan en una sola área, nosotros unimos ambos mundos. Nos destacamos por nuestra dedicación a la excelencia y la innovación. Nuestro equipo de expertos no solo escribe código o tira cables; diseñamos ecosistemas digitales completos. Desde la instalación del primer rack hasta el despliegue de una aplicación web compleja en AWS, garantizamos que la base tecnológica de tu empresa sea sólida, escalable y segura. RedOps Tech surge tras un exhaustivo análisis de mercado realizado por nuestros fundadores. Identificamos que las empresas perdían tiempo y recursos coordinando múltiples proveedores para sus necesidades de IT. Decidimos crear una empresa mixta única en su clase, capaz de ofrecer una respuesta unificada. Nuestra metodología se basa en la personalización extrema: Analizamos a fondo tus demandas. Priorizamos según la urgencia y el impacto en tu negocio. Ejecutamos con precisión técnica. Esta visión nos permite ser no solo un proveedor, sino un socio estratégico que entiende tanto tus cables como tus algoritmos."
+        
+    },
+
+
+
+
+

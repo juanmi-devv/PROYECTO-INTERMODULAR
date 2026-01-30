@@ -1,0 +1,14 @@
+{
+    "header": {
+        "about-us": "Acerca de RedOps",
+        "service": "Nuestros servicios",
+        "contact": "Contáctanos",
+        "home": "Inicio"
+    },
+    "Acerca de RedOps": {
+        "title": "Acerca de RedOps",
+        "text": 
+    },
+    "Our object": {
+        "text": "At RedOps Tech, we don't settle for being just another consulting firm. We were born out of a real need identified in the Technology Park: the disconnect between physical infrastructure (Networks) and the digital world (Web Development). While others specialize in a single area, we bridge both worlds. We stand out for our dedication to excellence and innovation. Our team of experts doesn't just write code or run cables; we design complete digital ecosystems. From installing the first rack to deploying a complex web application on AWS, we ensure your company's technological foundation is solid, scalable, and secure. RedOps Tech emerged from an exhaustive market analysis conducted by our founders. We identified that companies were wasting time and resources coordinating multiple vendors for their IT needs. We decided to create a unique, hybrid company capable of offering a unified solution. Our methodology is based on extreme customization: We thoroughly analyze your requirements. We prioritize based on urgency and impact on your business. We execute with technical precision. This vision allows us to be not just a supplier, but a strategic partner that understands both your cables and your algorithms."  
+    },
