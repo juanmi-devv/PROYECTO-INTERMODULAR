@@ -6,23 +6,27 @@
     <title>RedOps Tech - Infraestructura y Desarrollo</title>
     <link rel="stylesheet" href="CSS/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <header>
-        <a href="index.html">
-            <img class="logo" src="Images/nano-banana-2025-10-17T08-29-02-removebg-preview.png" alt="Logo RedOps Tech">    
-        </a>
-        <nav>
-            <a id="about-us" href="ARCHIVOS-HTML/about-us.html">Acerca de RedOps</a>
-            <a id="service" href="ARCHIVOS-HTML/servicios.html">Nuestros servicios</a>
-            <a id="contact" href="ARCHIVOS-HTML/contacto.html">Contáctanos</a>
-            <a id="home" href="index.html" class="active">Inicio</a>
-        </nav>
-        <h1 style="display:none;">RedOps Tech</h1>  
-        <div></div>
-        <button>🇪🇸</button>
-        <button>🇬🇧</button>
-    </header>
+    <a href="index.html" class="logo-container">
+        <img class="logo" src="Images/nano-banana-2025-10-17T08-29-02-removebg-preview.png" alt="Logo RedOps Tech">    
+    </a>
+
+    <nav>
+    <nav class="nav-links">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="ARCHIVOS-HTML/servicios.html">Servicios</a>
+        <a href="ARCHIVOS-HTML/about-us.html">Sobre nosotros</a>
+        <a href="ARCHIVOS-HTML/contacto.html">Contacto</a>
+        
+        <div class="lang-selector">
+            <button>🇪🇸</button>
+            <button>🇬🇧</button>
+        </div>
+    </nav>
+</header>
     
     <main>
         <section id="hero" class="hero-section">
@@ -49,8 +53,8 @@
             <div class="services-grid">
                 <article class="service-card">
                     <h3>Departamento de Redes</h3>
-                    <p>Instalación, certificación y mantenimiento de infraestructuras críticas.</p>
                     <ul>
+                        <li>Instalación, certificación y mantenimiento de infraestructuras críticas.</li>
                         <li>Cableado estructurado y Racks</li>
                         <li>Configuración de Switches y Routers</li>
                         <li>Seguridad perimetral y VPNs</li>
@@ -59,8 +63,8 @@
 
                 <article class="service-card">
                     <h3>Desarrollo Web</h3>
-                    <p>Creación de software a medida, Front-end y Back-end.</p>
                     <ul>
+                        <li>Creación de software a medida, Front-end y Back-end.</li>
                         <li>Webs corporativas y Apps (React/Node)</li>
                         <li>Integración de APIs REST</li>
                         <li>Bases de datos SQL y NoSQL</li>
@@ -89,17 +93,37 @@
             <input type="submit" value="Enviar mensaje">
         </form>
     </article>
-    
+
     <footer>
-        <nav class="footer-nav">
-            <a href="ARCHIVOS-HTML/formulario.html">Consulte sus dudas</a>
-        </nav>
-        <div class="footer-info">
-            <p>© 2025 RedOps Tech. Todos los derechos reservados.</p>
-            <p>Síguenos en nuestras redes</p>
+        <div class="footer-content">
+            <nav class="footer-nav">
+                <a href="ARCHIVOS-HTML/formulario.html">Consulte sus dudas</a>
+            </nav>
+
+            <div class="social-section">
+                <p>Síguenos en nuestras redes</p>
+                <div class="social-links">
+                    <a href="https://github.com/juanmi-devv" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://facebook.com/tu-pagina" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://instagram.com/tu-usuario" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/tu-usuario" target="_blank" aria-label="X">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-info">
+                <p>© 2026 RedOps Tech. Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
 
     <script src="JS/app.js"></script>
 </body>
-</html>z
+</html>

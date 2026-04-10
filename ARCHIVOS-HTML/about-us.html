@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre nosotros</title>
-<link rel="stylesheet" href="../CSS/about-us.css">
+    <title>RedOps Tech - Infraestructura y Desarrollo</title>
+    <link rel="stylesheet" href="../CSS/about-us.css">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-
     <header>
-        <a href="../index.html">
-            <img class="logo" src="../Images/nano-banana-2025-10-17T08-29-02-removebg-preview.png" alt="logo">
+    <a href="../index.html" class="logo-container">
+        <img class="logo" src="../Images/nano-banana-2025-10-17T08-29-02-removebg-preview.png" alt="Logo RedOps Tech">
         </a>
-        <nav>
-            <a href="../ARCHIVOS-HTML/about-us.html">Acerca de RedOps</a>
-            <a href="../ARCHIVOS-HTML/servicios.html">Nuestros servicios</a>
-            <a href="../ARCHIVOS-HTML/contacto.html">Contáctanos</a>
-            <a href="../index.html">Inicio</a>
-        </nav>
-        <h1>RedOps Tech</h1>  
-    </header>
-    
-    
+    <nav class="nav-links">
+        <a href="../index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="about-us.html" class="active">Sobre nosotros</a>
+        <a href="contacto.html">Contacto</a>
+        
+        <div class="lang-selector">
+            <button>🇪🇸</button>
+            <button>🇬🇧</button>
+        </div>
+    </nav>
+</header>
+
     <main>
     <section class="about-content">
         <article>
@@ -74,6 +78,34 @@ Esta visión nos permite ser no solo un proveedor, sino un socio estratégico qu
     </section>
 </main>
 
-    
+    <footer>
+        <div class="footer-content">
+            <nav class="footer-nav">
+                <a href="ARCHIVOS-HTML/formulario.html">Consulte sus dudas</a>
+            </nav>
+
+            <div class="social-section">
+                <p>Síguenos en nuestras redes</p>
+                <div class="social-links">
+                    <a href="https://github.com/juanmi-devv" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://facebook.com/tu-pagina" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://instagram.com/tu-usuario" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/tu-usuario" target="_blank" aria-label="X">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-info">
+                <p>© 2026 RedOps Tech. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

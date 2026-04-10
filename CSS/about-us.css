@@ -1,83 +1,298 @@
+/* =========================================
+   1. VARIABLES Y CONFIGURACIÓN BASE
+   ========================================= */
+:root {
+    --color-primary: #e63946;    
+    --color-primary-dark: #d62828; 
+    --color-dark: #1d3557;       
+    --color-light: #f1faee;      
+    --color-accent: #457b9d;     
+    --color-white: #ffffff;
+    --text-color: #333333;
+    
+    --border-radius: 8px;
+    --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
 * {
-  margin: 0;
-  box-sizing: border-box;
-}
-
-/* --- 1. Estilos del Contenedor Principal (HEADER) --- */
-header {
-    /* Usamos Flexbox para alinear el logo, nav y h1 en una fila */
-    display: flex;
-    /* Los alinea en el eje principal (horizontalmente) */
-    justify-content: space-between; 
-    /* Los centra (verticalmente) */
-    align-items: center; 
-    
-    background-color: #f0a800; /* Color de fondo claro para el encabezado */
-    padding: 10px 40px; /* Relleno superior/inferior y a los lados */
-    border-bottom: 2px solid #ddd; /* Línea de separación sutil */
-    
-    /* Fuente por defecto (opcional) */
-    font-family: Arial, sans-serif;
-
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-/* --- 2. Estilos del Logo --- */
-header .logo {
-    /* El tamaño ya está definido en el HTML (180x200), pero podemos añadir margen */
-    margin-left: 10px;
-    height: 180px; 
-    width: 200px;
-    object-fit: contain;
-}
-
-/* --- 3. Estilos del Título Principal (h1) --- */
-header h1 {
-    /* El h1 lo colocamos a la derecha */
-    color: #749bf6; /* Un color distintivo, como un rojo fuerte para "Tech" */
-    font-size: 2.5em; /* Tamaño grande */
-    font-weight: bold;
     margin: 0;
-    /* Este margen empuja al h1 a la derecha, si el nav está en el centro */
-    margin-left: auto; 
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* --- 4. Estilos de la Navegación (NAV) --- */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--color-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* =========================================
+   2. HEADER Y NAVEGACIÓN (Actualizado)
+   ========================================= */
+header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: var(--color-dark);
+    padding: 10px 5%;
+    border-bottom: 3px solid var(--color-primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+header .logo {
+    height: 75px; /* Tamaño profesional */
+    width: auto;
+    transition: var(--transition);
+    padding: 5px 0;
+}
+
+header .logo:hover {
+    transform: scale(1.05);
+}
+
 header nav {
-    /* Ocupa el espacio central */
-    flex-grow: 1; 
-    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
 }
 
 header nav a {
-    text-decoration: none; /* Elimina el subrayado de los enlaces */
-    color: #333; /* Color de texto oscuro */
-    font-size: 1.1em;
-    font-weight: 500;
-    margin: 0 15px; /* Espaciado entre los enlaces */
-    padding: 5px 10px; /* Relleno alrededor del texto para mejor área de clic */
-    transition: color 0.3s, border-bottom 0.3s; /* Transición suave para el hover */
+    text-decoration: none;
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: var(--transition);
 }
 
-/* Efecto al pasar el ratón (Hover) */
-header nav a:hover {
-    color: #ff6600; /* Color naranja al pasar el puntero sobre los enlaces */
-    border-bottom: 2px solid #ff6600;
-}
-.about-intro {
-    justify-content: center;
+header nav a:hover,
+header nav a.active {
+    color: var(--color-primary);
+    background-color: rgba(255, 255, 255, 0.08);
 }
 
-main article {
+/* Selector de Idiomas con Espaciado Correcto */
+.lang-selector {
+    display: flex;
+    gap: 18px; 
+    border-left: 1px solid rgba(255,255,255,0.3);
+    padding-left: 20px;
+}
 
-    max-width: 1000px;
-    /* centra el bloque en la pantalla automáticamente */
-    margin: 0 auto;
-    padding: 0 20px;
-    
-    text-align: justify;
+.lang-selector button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    transition: var(--transition);
+}
+
+.lang-selector button:hover {
+    transform: scale(1.2);
+}
+
+/* =========================================
+   3. SECCIÓN HERO (Portada)
+   ========================================= */
+.hero-section {
+    background: linear-gradient(135deg, var(--color-dark) 0%, #2a4d7a 100%);
+    color: var(--white);
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.slogan {
+    font-size: 1.5rem;
+    color: #a8dadc;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: white;
     line-height: 1.8;
-    color: #444;
+    max-width: 800px;
+    margin: 0 auto 2.5rem auto;
+}
+
+.btn-secondary {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 14px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: var(--transition);
+    border: 2px solid var(--color-primary);
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: var(--color-primary);
+}
+
+/* =========================================
+   4. SECCIONES Y GRIDS
+   ========================================= */
+section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    color: var(--color-dark);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 5px;
+    background-color: var(--color-primary);
+    margin: 10px auto 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    border-top: 5px solid var(--color-dark); 
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-top-color: var(--color-primary);
+}
+
+/* =========================================
+   5. FORMULARIO 
+   ========================================= */
+article#contacto-home {
+    max-width: 650px;
+    margin: 4rem auto;
+    padding: 3rem;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-top: 8px solid var(--color-primary);
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 2px solid #eee;
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+form input[type="submit"] {
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: bold;
+    border: none;
+    margin-top: 2rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   6. FOOTER (Estructura Limpia)
+   ========================================= */
+footer {
+    background-color: var(--color-dark);
+    color: white;
+    padding: 4rem 2rem 2rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.6rem;
+    transition: var(--transition);
+}
+
+.footer-nav a:hover { color: var(--color-primary); }
+
+.social-section p { margin-bottom: 15px; opacity: 0.9; }
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 30px;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    transform: translateY(-5px);
+    color: var(--color-primary);
+}
+
+.footer-info {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 2rem;
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+/* =========================================
+   7. MEDIA QUERIES
+   ========================================= */
+@media (max-width: 768px) {
+    header { flex-direction: column; gap: 20px; padding: 20px; }
+    .nav-links { flex-wrap: wrap; justify-content: center; }
+    .lang-selector { border-left: none; border-top: 1px solid rgba(255,255,255,0.1); padding: 10px 0 0; }
+    .hero-section h1 { font-size: 2.8rem; }
 }
